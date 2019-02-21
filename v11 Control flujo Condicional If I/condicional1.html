@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var precioCoche=60000;
+    var dineroAhorrado=prompt("Cuanto dinero tienes ahorrado");
+    var edad=prompt("Introduce tu edad por favor");
+    var loteria=prompt("Ganaste la loteria").toUpperCase();
+    //if(dineroAhorrado>=precioCoche && edad>=18){
+    if(dineroAhorrado>=precioCoche || loteria=="SI"){
+        alert("Puedes comprar coche");
+    }else{
+        alert("No puedes comprar el coche. Tus ahorros son insuficientes");
+    }    
+    alert("Continua con el programa")
+    </script>
+    
+</body>
+</html>

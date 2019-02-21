@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num1=prompt("Introduce el primer número");
+        var num2=prompt("Introduce el segundo número");
+        //alert (typeof(num1));
+        if(!isNaN(num1) && !isNaN(num2))
+        {
+        var operacion=prompt("Escoja la operacion a realizar: suma, resta, multiplicación y división").toLowerCase();
+        if(operacion=="suma")
+        {
+            alert(parseInt(num1)+parseInt(num2));
+        }
+        else if(operacion=="resta")
+        {
+            alert(parseInt(num1)-parseInt(num2));
+        }
+        else if(operacion=="multiplicacion" || operacion=="multiplicación")
+        {
+            alert(parseInt(num1)*parseInt(num2));
+        }
+        else if(operacion=="division" || operacion=="división")
+        {
+            alert(parseInt(num1)/parseInt(num2));
+        }
+    }else{
+        if(typeof(num1)=="string"|| typeof(num2)=="string"){
+            alert("No se puede operar; has  introducido valores no numericos")
+
+        }else{
+            alert ("A ocurrido un error inesperado");
+        }
+
+    }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+    <table class="table" width="25%" border="1">
+        <thead>
+            <tr>
+                <th>Mensaje</th>
+                <th>Intentos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><label for="textfield"></label>
+                    <input type="text" name="textfield" id="c_mensaje">
+                </td>
+                <td><label for="textfield"></label>
+                    <input type="text" name="textfield2" id="c_intentos">
+                    
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+    <script>
+            var aleatorio=Math.round(Math.random()*100);
+            //alert(aleatorio);
+            var minum, intentos;
+            minum=intentos=0;
+            var mensaje=document.getElementById("c_mensaje");
+            var intentos_consumidos=document.getElementById("c_intentos");
+            
+            do{
+                minum= prompt("Introduce un numero entre 0y 100");
+                if(aleatorio>minum){
+                    //alert("Numero es mayor al ingresado");
+                    //document.write("Numero es mayor al ingresado <br />");
+                    mensaje.value="Mas alto";
+                    mensaje.style.fontSize="18px";
+                }
+                if(aleatorio<minum){
+                    //alert("Numero es menor al ingresado");
+                    //document.write("Numero es menor al ingresado <br />");
+                    mensaje.value="Mas bajo";
+                    mensaje.style.fontSize="18px";
+                }
+                intentos++;
+                intentos_consumidos.value=intentos;
+                intentos_consumidos.style.fontSize="18px";
+                intentos_consumidos.style.color="#ff9876";
+                intentos_consumidos.style.textAlign="center";
+            }while(aleatorio!=minum)
+            mensaje.value="Correcto !";
+            mensaje.style.color="blue";
+        </script>
+    
+</body>
+</html>
