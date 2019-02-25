@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>      
+        function suma(num1, num2){
+            alert("La suma es: "+(parseInt(num1)+parseInt(num2)));
+        }
+        function resta(num1, num2){
+            alert("La resta es: "+(num1-num2));
+        }
+        function multiplicar(num1, num2){
+            alert("La multiplicación es: "+(num1*num2));
+        }
+        function dividir(num1, num2){
+            alert("La división es: "+(num1/num2));
+        }
+        var repetir="si";
+        do{
+        var operacion=prompt("¿Que operación desea realizar","sumar/restar/multiplicar/dividir");
+        var operador1=prompt("Introduce N1: ");
+        var operador2=prompt("Introduce N2");
+         if(operacion=="sumar"){
+             suma(operador1,operador2);
+        }else if(operacion=="restar"){
+            resta(operador1,operador2);
+         }else if(operacion=="multiplicar"){
+             multiplicar(operador1,operador2);
+         }else if(operacion=="dividir"){
+             dividir(operador1,operador2);
+         }else
+         {
+             alert("No existe la operacion");
+         }
+         repetir=prompt("Desea repetir operacion","si/no");
+        }while(repetir=="si")
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

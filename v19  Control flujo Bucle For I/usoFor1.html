@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*
+        var meses=["Enero","Febrero", "Marzo", "Abril","Mayo",
+                "Junio", "Julio", "Agosto","Septiembre",
+                "Octubre", "Noviembre", "Diciembre"];
+
+        for(var i=0;i<meses.length;i++){
+            document.write("mes: "+meses[i]+"<br />");
+        }*/
+        var trabajadores=new Array();
+        var persona="";
+        var contador=0;
+        while(persona !="salir"){
+            persona=prompt("Introduce trabajador");
+            trabajadores[contador]=persona;
+            contador++;
+        }
+        trabajadores.pop();
+
+        for(var i=0;i<trabajadores.length;i++){
+            document.write(trabajadores[i]+"<br />");
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
