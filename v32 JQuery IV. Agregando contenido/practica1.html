@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #contenedores{
+            background-color: #afffbf;
+        }
+        .micontenedor{
+            background-color: #bff98b;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            //alert($("#errores h2").html());// permite llegar al valor de un etiqueta
+              //$("#errores").html("<p>Exiten errores, se debe remplazar</p>");
+              //la funcion .html, sustituye valores, ya sean etiquetas, o valores.
+              //Ahora vamos añadir una etiqueta, con la funcion .append()
+              //la etiqueta <h2> son de tipo blokclevel; es decir que la etiqueta viene incluida un salto de linea.
+              
+              //$("#errores").append("<p>Exiten errores, se debe remplazar</p>");
+              //.append(); agrega la etiqueta luego de la internas
+
+              //$("#errores").prepend("<p>Exiten errores, se debe remplazar</p>");
+              //.prepend(); agreda las etiquetas antes de la demas.
+
+              //$("#errores").before("<p>Exiten errores, se debe remplazar</p>");
+              //.before(); esta funcion jquery, agrega antes del contenedor fuera del elemento 
+
+              $("#errores").after("<p>Exiten errores, se debe remplazar</p>");
+              //.after(); esta funcion jquery, agrega despues del contenedor fuera del elemento
+
+              //funcion text(); remplaza el texto de una etiqueta contendora
+              //se debe direccionar bien los selectores ejm;
+
+              $("#errores h2").text("Este texto es remplazado por el anterior");
+
+
+
+
+
+
+        });
+    </script>
+</head>
+<body>
+<div id="contenedores">
+    <p>aqui esta una etiqueta</p>
+
+    <div id="errores" class="micontenedor">
+        <h2>Errores</h2>
+
+    </div>
+    <p>aqui termina la etiqueta inicial</p>
+</div>
+    
+</body>
+</html>

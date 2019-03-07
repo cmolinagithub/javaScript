@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #banner{
+            background-color: #f000ff;
+            width: 450px;
+            height: 300px;
+            position: absolute;
+            left: 400px;
+            top:50px;
+            font-size: 36px;
+            text-align: center;
+        }
+        img{
+            float:left;
+            margin: 15px;
+            width: 300px;
+            height:200px;
+        }
+        #sustitucion{
+            background-color: #09988f;
+            float:left;
+            margin: 15px;
+            width: 300px;
+            height:200px;
+            font-size: 36px;
+            color: #abcd99;
+
+
+        }
+    </style>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            var imagenes;
+
+            /*var z=document.getElementById("cerrar");
+            z.addEventListener("click",cerrar_banner,false);*/
+            //lo mismo que lo anterio pero con funciones encadenadas de jquery.
+
+            document.getElementById("cerrar").addEventListener("click",cerrar_banner,false);
+            //document.getElementById("imagen1").addEventListener("click",carrito,false);
+            imagenes=document.querySelectorAll("#carrete img");
+            
+            for(var i=0;i<imagenes.length;i++){
+                imagenes[i].addEventListener("click",carrito,false);
+            }
+
+
+        });
+        function cerrar_banner(){
+            $("#banner").remove();
+        }
+        function carrito(num){
+            if(num.target.id=="imagen1"){
+            $("#imagen1").replaceWith("<div id='sustitucion'> Agregado al carro");
+            }
+            if(num.target.id=="imagen2"){
+            $("#imagen2").replaceWith("<div id='sustitucion'> Agregado al carro");
+            }
+            if(num.target.id=="imagen3"){
+            $("#imagen3").replaceWith("<div id='sustitucion'> Agregado al carro");
+            }
+            if(num.target.id=="imagen4"){
+            $("#imagen4").replaceWith("<div id='sustitucion'> Agregado al carro");
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <div id="banner">
+        Banner de Prueba
+        <p id="cerrar">Cerrar</p>
+    </div>
+    <div id="carrete">
+        <img src="img/d.jpg" alt="" id="imagen1">
+        <img src="img/d1.jpg" alt="" id="imagen2">
+        <img src="img/d2.jpg" alt="" id="imagen3">
+        <img src="img/d3.jpg" alt="" id="imagen4">
+    </div>
+    
+</body>
+</html>

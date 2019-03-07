@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Documento sin título</title>
+		<style>
+
+.linkdestacacursos{
+	/*background-color:#F00;*/
+	color: #f00000;
+	font-weight: bold;
+	margin-left: 25px;
+}
+.linkinformacion{
+	/*background-color:#F00;*/
+	color: #990;
+	font-weight: bold;
+	margin-left: 25px;
+}
+
+a{
+	display:block;
+	margin-bottom:20px;
+	font-size:24px;
+}
+table{
+	text-align:center;
+	border:none;
+}
+
+td{
+	border:none;
+}
+
+#contieneEnlaces {
+	position: absolute;
+	left: 31px;
+	top: 65px;
+	width: 400px;
+	height: 649px;
+	z-index: 1;
+	padding-top:100px;
+}
+</style>
+		<script src="js/jquery-3.3.1.js"></script>
+		<script>
+	$(document).ready(function(){
+		//$("a[href^='https://']").addClass("linkdestacacursos");
+	/*En este ejemplo es usan tambien javaScript
+
+	document.getElementById("cursos").addEventListener("click",resaltacursos, false);		
+	document.getElementById("informacion").addEventListener("click",resaltarejemplos,false);
+	});
+
+	function resaltacursos(){
+		$(".ejemplos").removeClass("linkdestacacursos");
+		$(".cursos").addClass("linkdestacacursos");
+	}
+	function resaltarejemplos(){
+		$(".cursos").removeClass("linkdestacacursos");
+		$(".ejemplos").addClass("linkdestacacursos");
+	}*/
+
+//El codigo a continuacion, aplica con funciones JQuery; 
+//asi mismo se usa con radio[s]
+
+		$("#cursos").click(function(){
+		$("a").removeClass("linkinformacion");
+		$(".cursos").addClass("linkdestacacursos");
+
+		}); 
+
+		$("#informacion").click(function(){
+		$("a").removeClass("linkdestacacursos");
+		$(".ejemplos").addClass("linkinformacion");
+		});
+
+//Ahora aplicando la funcion toggleClas; cabe mencionar que esta funion es util 
+//con los elementos checkbox
+/*
+		$("#cursos").click(function(){
+		$(".cursos").toggleClass("linkdestacacursos");
+
+		});
+
+		$("#informacion").click(function(){
+		$(".ejemplos").toggleClass("linkinformacion");
+
+		});
+*/
+		});
+</script>
+	</head>
+
+	<body>
+
+		<div id="contieneEnlaces">
+
+			<a href="http://www.pildorasinformaticas.com" target="_blank" class="cursos">
+				Píldoras informáticas
+			</a><br>
+
+			<a href="http://www.google.com" target="_blank" class="ejemplos">
+				Google
+			</a><br>
+
+			<a href="https://www.youtube.com/user/pildorasinformaticas" target="_blank"
+				class="cursos">
+				Píldoras informáticas YouTube
+			</a><br>
+
+			<a href="remover_reemplazar.html" target="_blank">
+				Remover y reemplazar
+			</a><br>
+
+			<a href="https://news.google.es/" target="_blank" class="ejemplos">
+				Noticias google
+			</a><br>
+
+			<a href="calculadora_arcaica.html" target="_blank">
+				Calculadora
+			</a>
+		</div>
+
+		<table width="100%" border="1">
+			<tr>
+				<td>Cursos destacados&nbsp;&nbsp;<input type="radio" name="eventos" value="Cursos"
+						id="cursos"></td>
+				<td>Información adicional&nbsp;&nbsp;<input type="radio" name="eventos"
+						value="Información" id="informacion"></td>
+			</tr>
+
+
+		</body>
+	</html>
