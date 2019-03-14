@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Documento sin título</title>
+		<style>
+
+h1{
+	text-align:center;
+}
+
+p{
+	
+	font-size:18px;
+	font-family:Verdana, Geneva, sans-serif;
+	text-align:justify;
+}
+
+#links {
+	
+	width: 20%;
+	margin-left:20px;
+	border:dashed #0000FF 2px;
+	float:left;
+	padding-bottom:200px;
+	padding-left:20px;
+	
+
+}
+
+#links h2{
+	text-align:center;
+}
+
+#ultimos{
+	
+	width:75%;
+	float:left;
+		
+}
+li{
+	font-weight:bold;
+	font-size:18px;
+}
+
+</style>
+		<script src="js/jquery-3.3.1.js"></script>
+
+		<script>
+			$(document).ready(function(){
+				$("a[href^='https://']").each(function(){
+					var linkExterno=$(this).attr("href");
+					$("#links").append("<li>"+linkExterno+"</li>");
+				})
+
+			});
+		</script>
+	</head>
+
+	<body>
+
+
+		<h1>Utillizando la función each</h1>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et urna
+			purus. In sed malesuada lectus. Mauris vel neque sed dolor facilisis volutpat
+			a sed diam. Nullam <a href="https://www.gmail.es">ir a Gmail</a> varius
+			vehicula nisi et euismod. Vivamus placerat risus sed ipsum dignissim gravida.
+			Fusce consequat posuere orci, in pretium eros volutpat porttitor. Nullam
+			venenatis aliquam tellus, non ullamcorper nibh faucibus sed. Nullam luctus
+			sapien feugiat fermentum sodales. Quisque et iaculis lorem. Praesent id arcu
+			hendrerit libero varius ullamcorper. Nulla tortor elit, eleifend eu viverra
+			consequat, lobortis a orci. Nam a varius eros. Suspendisse vitae consectetur
+			tortor.</p>
+
+		<p>Vivamus ornare sapien non tempor maximus. Vestibulum ut mauris arcu.
+			Suspendisse pellentesque, ipsum non consectetur consequat, elit purus dapibus
+			neque, in placerat dui nunc iaculis ipsum. Fusce eu consequat lacus.
+			Pellentesque mollis nisi erat, sed volutpat neque luctus in. Nunc vel tellus
+			libero. Pellentesque habitant morbi tristique senectus et netus et malesuada
+			fames ac turpis egestas.</p>
+
+		<div id="ultimos"><p>Maecenas ac nibh luctus <a
+					href="https://news.google.es/">Ir a google news</a> tellus congue tempus ac
+				a lectus. Curabitur quis mauris eget magna cursus tristique non vel urna.
+				Donec sed suscipit leo. Aenean ac ante sem. Vestibulum dignissim in sem ac
+				consectetur. Nullam eleifend at sapien quis rutrum. Nulla dignissim
+				consectetur ultrices.</p>
+
+			<p>Nullam in purus a lacus lacinia dictum ut ut lacus. Sed et volutpat magna,
+				id consequat massa. Fusce ac dapibus ipsum. Quisque in condimentum tortor.
+				Proin hendrerit, massa ac volutpat euismod, justo metus interdum magna, ac
+				consequat turpis sapien eleifend libero. Quisque tempus ut nulla et
+				molestie. Praesent magna neque, porta ac metus ac, auctor dictum lorem.</p>
+			<p>Mauris nec nisl et tortor elementum bibendum. Morbi eget eros ipsum. Nulla
+				facilisi. Proin imperdiet pellentesque ex, a consectetur justo commodo at.
+				In sodales consectetur <a href="https://www.google.es/maps">Ir a maps</a>
+				quam. Pellentesque malesuada urna justo. Pellentesque imperdiet varius
+				libero vitae scelerisque. Fusce sodales justo id lacus hendrerit interdum.
+				Proin a nulla at purus <a href="https://Inventado.com">ir a página inventada
+				</a> aliquet hendrerit. Aliquam auctor neque et elit commodo, placerat
+				euismod risus suscipit. Maecenas ultrices diam purus, ut feugiat nibh
+				pellentesque suscipit. Donec ultrices feugiat nibh, eget viverra mauris
+				interdum vel. Vestibulum accumsan dignissim urna iaculis lacinia. Aenean
+				tempor aliquet urna at dictum. Nullam rutrum hendrerit justo. Praesent
+				sollicitudin accumsan odio, ac molestie felis convallis at.</p>
+				 <p>Esta es una prueba de crosstrsonik   <a href="https://www.crosstronik.com.ec">Crosstronik Cia.Ltda</a></p>
+
+				
+			
+		</div>
+		<div id="links"><h2>Links utilizados</h2></div>
+	</body>
+</html>

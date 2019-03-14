@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<style>
+
+table{
+	text-align:center;
+	width:50%;
+	border:none;
+	margin:auto;
+}
+
+img{
+	padding:0 5px;
+}
+h1{
+	text-align:center;
+}
+
+</style>
+<script src="js/jquery-3.3.1.js"></script>
+
+<script>
+$(document).ready(function(){
+  var elementos=document.querySelectorAll("img");
+  for(var i=0; i<elementos.length;i++){
+    elementos[i].addEventListener("mouseover",cambiar,false);
+    elementos[i].addEventListener("mouseout",restaurar,false);
+
+  }
+});
+function cambiar(e){
+  if(e.target==img1){
+  $("#img1").attr("src","img/d1.jpg");
+  }else if(e.target==img2){
+    $("#img2").attr("src","img/d2.jpg");
+  }else if(e.target==img3){
+    $("#img3").attr("src","img/d3.jpg");
+  }else if(e.target==img4){
+    $("#img4").attr("src","img/d4.jpg");
+  }
+}
+
+function restaurar(e){
+  if(e.target==img1){
+  $("#img1").attr("src","img/t/d1_t.jpg");
+  }else if(e.target==img2){
+    $("#img2").attr("src","img/t/d2_t.jpg");
+  }else if(e.target==img3){
+    $("#img3").attr("src","img/t/d3_t.jpg");
+  }else if(e.target==img4){
+    $("#img4").attr("src","img/t/d4_t.jpg");
+  }
+}
+	
+
+</script>
+</head>
+
+<body>
+<h1>Galería de imágenes</h1>
+<table width="100%" border="0">
+  <tr>
+    <td><img src="img/t/d1_t.jpg" id="img1" ></td>
+    <td><img src="img/t/d2_t.jpg" id="img2" ></td>
+    <td><img src="img/t/d3_t.jpg" id="img3" ></td>
+    <td><img src="img/t/d4_t.jpg" id="img4" ></td>
+  </tr>
+</table>
+</body>
+</html>

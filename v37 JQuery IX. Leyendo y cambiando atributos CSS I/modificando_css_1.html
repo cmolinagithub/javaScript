@@ -28,64 +28,34 @@ table{
 
 <script>
 	$(document).ready(function(){
-		/*document.getElementById("aumenta1").addEventListener("click",aumentar,false);
-		document.getElementById("disminuye1").addEventListener("click",disminuir,false);
-
-		document.getElementById("aumenta2").addEventListener("click",aumentar,false);
-		document.getElementById("disminuye2").addEventListener("click",disminuir,false);
-
-		document.getElementById("aumenta3").addEventListener("click",aumentar,false);
-		document.getElementById("disminuye3").addEventListener("click",disminuir,false);
-		*/
 		var botones = document.querySelectorAll("input");
-		for(var i=0;i<botones.length;i++){
-			botones[i].addEventListener("click",aumentar,false);
-			botones[i].addEventListener("click",disminuir,false);
+		for(var i=0;i<botones.length; i++){
+			botones[i].addEventListener("click",modo_lectura,false);
 		}
-
 		
 	});
-	//mas generarl
-	function aumentar(e){
-	/*function aumentar(){ //para ejemplo inicial
-		var tamDefecto=$("#noticia1").css("font-size");
-		//alert("tamanio es: "+tamDefecto);
-		tamDefecto=parseFloat(tamDefecto);
-		$("#noticia1").css("font-size",tamDefecto+0.5);
-	*/
+
+	function modo_lectura(e){
 		var zonaActuacion;
-		if(e.target==aumenta1){
+
+		if(e.target==m_lectura1){
+
 			zonaActuacion="#noticia1";
-		}else if(e.target==aumenta2){
+
+		}else if(e.target==m_lectura2){
+
 			zonaActuacion="#noticia2"
-		}else if(e.target==aumenta3){
+
+		}else if(e.target==m_lectura3){
+
 			zonaActuacion="#noticia3"
 		}
-		var tamDefecto=$(zonaActuacion).css("font-size");
-		tamDefecto=parseFloat(tamDefecto);
-		$(zonaActuacion).css("font-size",tamDefecto+0.5);
+		$(zonaActuacion).css({"background-color" : "#000", 
+								"font-size" : "20px", 
+								"text-align" : "justify",
+								"color": "#fff"});
 	}
-	//mas general
-	/*function disminuir(){
-		var tamDefecto=$("#noticia1").css("font-size");
-		tamDefecto=parseFloat(tamDefecto);
-		$("#noticia1").css("font-size",tamDefecto-0.5);
-	*/
-	function disminuir(e){
 
-		var zonaActuacion;
-		if(e.target==disminuye1){
-			zonaActuacion="#noticia1";
-		}else if(e.target==disminuye2){
-			zonaActuacion="#noticia2"
-		}else if(e.target==disminuye3){
-			zonaActuacion="#noticia3"
-		}
-		var tamDefecto=$(zonaActuacion).css("font-size");
-		tamDefecto=parseFloat(tamDefecto);
-		$(zonaActuacion).css("font-size",tamDefecto-0.5);
-
-	}
 
 </script>
 </head>
@@ -97,10 +67,8 @@ table{
 	<table>
 	 <tr>
 		 <td style="text-align:left">
-			<input type="button" value="Aumentar" id="aumenta1">
-		</td><td style="text-align:right">
-			<input type="button" value="Disminuir" id="disminuye1">
-		</td>
+			<input type="button" value="Modo lectura" id="m_lectura1">
+		
 	</tr>
 	</table>
 </div>
@@ -109,11 +77,9 @@ table{
 	<table>
 		<tr>
 			<td style="text-align:left">
-				<input type="button" value="Aumentar" id="aumenta2">
+				<input type="button" value="Modo lectura" id="m_lectura2">
 			</td>
-			<td style="text-align:right">
-				<input type="button" value="Disminuir" id="disminuye2">
-			</td>
+			
 		</tr>
 	</table>
 </div>
@@ -122,11 +88,9 @@ table{
 	<table>
 		<tr>
 			<td style="text-align:left">
-				<input type="button" value="Aumentar" id="aumenta3">
+				<input type="button" value="Modo lectura" id="m_lectura3">
 			</td>
-			<td style="text-align:right">
-				<input type="button" value="Disminuir" id="disminuye3">
-			</td>
+			
 		</tr>
 	</table>
 </div>

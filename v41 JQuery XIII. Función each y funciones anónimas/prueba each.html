@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<style>
+
+img{
+	margin:0 10px;
+	
+}	
+#contenedor{
+	width:100%;
+	margin:auto;
+}
+
+</style>
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+	$(document).ready(function(){
+		document.getElementById("miboton").addEventListener("click",cambiar,false);
+		
+	});
+	function cambiar(){
+		//forma tradicional
+		$("img").fadeOut(1000).fadeIn(1000).width("310");
+		//utilizando each
+		$("img").each(function(){
+			$(this).fadeOut(1000).fadeIn(1000).width("310");
+		});
+
+	
+	}
+
+</script>
+</head>
+
+<body>
+<div id="contenedor">
+<img src="imgs/1.jpg">
+<img src="imgs/2.jpg">
+<img src="imgs/3.jpg">
+<img src="imgs/4.jpg">
+</div>
+<div id="boton">
+<input type="button" id="miboton" value="Acción">
+</div>
+
+</body>
+</html>
