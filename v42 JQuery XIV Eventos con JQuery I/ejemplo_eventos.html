@@ -21,10 +21,31 @@ a{
 	color:#FFF;
 	font:bold 20px Verdana, Geneva, sans-serif;
 } 
+legend{
+	align-content: center;
+}
 </style>
-<script src="Jquery/jquery-1.6.3.min.js"></script>
+<script src="js/jquery-3.3.1.js"></script>
 <script>
+$(document).ready(function(){
+	$("html").dblclick(function(){
+		alert ("Ha hecho doble clic");
+	});
+	$("a").mouseover(function(){
+		var mensaje="<p>Estas pasando el raton por emcima del link</p>";
+		$("#principal").append(mensaje);
+	});
+	$("#el_boton").click(function(){
+		$(this).val("Cambio Boton");
 
+	});
+	$("#el_campo").focus(function(){
+		$(this).val("Ingrese el nombre por favor");
+
+	});
+	
+
+});
 
 </script>
 </head>

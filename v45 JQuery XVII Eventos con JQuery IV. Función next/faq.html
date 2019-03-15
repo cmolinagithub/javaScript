@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Píldoras Faq</title>
+
+
+<style type="text/css">
+
+body{
+	background-color:#009;
+	color:#FFF;
+}
+
+h3 {
+	background: url(img/open.png) no-repeat 0 11px;
+	padding: 10px 0 0 25px;
+	cursor: pointer;
+}
+h3.cerrar {
+	background-image: url(img/close.png);
+}
+.respuesta {
+	margin-left: 25px;	
+}
+.titulo{
+	text-align:center;
+}
+.principal{
+	margin-left:200px;
+	margin-top:150px;
+	
+}
+</style>
+
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+  $(document).ready(function(){
+    $(".respuesta").hide();
+
+    $(".principal h3").click(function(){
+      $(this).toggleClass("cerrar").next(".respuesta").fadeToggle();
+      //$(this).next(".respuesta").fadeToggle();
+      //$(this).addClass("cerrar");
+      //$(".respuesta").toggle();
+    });
+  });
+
+</script>
+
+
+
+</head>
+<body>
+
+<div>
+	<p><img src="img/bela.jpg"></p>
+    <h1 class="titulo">Píldoras informáticas FAQ</h1>
+</div>
+
+	<div class="principal">
+<h2>Preguntas frecuentes</h2>
+
+<h3>¿Qué programa utilizas para grabar los vídeos?</h3>
+      <div class="respuesta">
+        <p>Utilizo Camtasia versión 7 junto con el programa gratuito ZoomIt</p>
+      </div>
+      
+      <h3>¿Puedes pasarme la página donde te has descargado el Dreamweaver? Es que a mi me pide códigos</h3>
+      <div class="respuesta">
+        <p>Todo el software utilizado por Píldoras Informáticas es 100% legal. Desconozco si existen páginas a tal efecto y si las conociera, tampoco podría divulgarlas pues constituye un delito.</p>
+      </div>
+      
+      <h3>¿Para cuándo el curso de PHP/MySql?</h3>
+      <div class="respuesta">
+        <p>El curso de PHP/MySql será el siguiente después de terminar los de Java y JavaScript</p>
+     
+</div>
+
+ <h3>¿Por qué no ordenas los vídeos? Así no hay quien encuentre nada</h3>
+      <div class="respuesta">
+        <p>Los vídeos se encuentran perfectamente ordenados. Puedes acceder a las listas de reproducción de mi canal donde podrás acceder a ellos organizados por curso y número de vídeo</p>
+     
+</div>
+
+ 
+ <h3>Estoy en el vídeo nº 18 del curso VBA Excel. Llevo ahí 3 meses. ¿Por qué no publicas más vídeos?</h3>
+      <div class="respuesta">
+        <p>El curso de VBA Excel contiene 56 vídeos ya terminados desde hace un año. Accede a la lista de reproducción de mi canal y podrás ver todos los cursos y vídeos organizados por curso y nº de vídeo</p>
+     
+</div>
+
+
+ <h3>Hola. Muy buenos los vídeos. Dame una dirección de correo para pasarte una BBDD con la que tengo problemas</h3>
+      <div class="respuesta">
+        <p>Gracias por el comentario. Lamentablemente no tengo tiepo para atender temas informáticos personales. Tan solo resuelvo dudas relacionadas con los cursos</p>
+     
+</div>
+
+ <h3>Hola. Excelente tu canal. Tengo una duda: Resulta que tengo una BBDD con 29 tablas con 51 campos cada una. ¿Por qué cuando imprimo no me sale la fecha de alta en la empresa de mis empleados?</h3>
+      <div class="respuesta">
+        <p>Hola. Gracias por el comentario. Este tipo de dudas resulta un poco complicado resolverlas a distancia. Las consultas para el tarot y la bola de cristal las contesto solo el 30 de febrero. Siento no ser de más ayuda. Un saludo</p>
+     
+</div>
+
+</body>
+</html>
