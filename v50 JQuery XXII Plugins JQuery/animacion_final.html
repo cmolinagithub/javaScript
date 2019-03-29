@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Menús deslizantes</title>
+
+<style>
+#menu {
+	width: 70px;
+	background-color: rgb(110,138,195);
+	padding: 20px 20px 0 20px;
+	position: absolute;
+	left: -92px;
+	left1: 0px;
+	z-index: 100;
+}
+#menu img {
+	margin-bottom: 20px;
+	border: 1px solid rgb(0,0,0);
+}
+h1{
+	text-align:center;
+}
+p{
+	margin-left:150px;
+}
+</style>
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+
+<script>
+$(document).ready(function() {
+	$("#menu").hover(function(){
+		$(this).stop().animate({
+			left:"0px"
+
+		},500,"easeInSine");//termina animate		
+	},function(){
+		$(this).stop().animate({
+			left:"-92px"
+		},1500,"easeOutBounce");
+	});
+  
+}); 
+</script>
+</head>
+<body>
+
+  <div id="menu">
+  <img src="img/d.jpg" width="70" height="70" alt="blue">
+  <img src="img/d1.jpg" width="70" height="70" alt="green">
+  <img src="img/d2.jpg" width="70" height="70" alt="orange">
+  <img src="img/d3.jpg" width="70" height="70" alt="purple">
+  <img src="img/d.jpg" width="70" height="70" alt="red">
+  <img src="img/d1.jpg" width="70" height="70" alt="yellow">
+</div>
+
+<h1>Menús deslizantes</h1>
+<p>Pasa el ratón por encima de la pestaña de la izquierda</p>
+
+
+</body>
+</html>

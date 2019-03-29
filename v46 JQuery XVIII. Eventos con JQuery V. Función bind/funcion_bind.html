@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<style>
+
+table{
+	text-align:center;
+float:right;
+margin-right:50px;
+
+}
+p{
+	font-size:1.3em;
+}
+
+
+#imagen_grande {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left:0;
+	right:0;
+	width: 700px;
+	height: 405px;
+	z-index: 1;
+	border:dotted 5px #0000FF;
+	/*background-color: #FF0000;*/
+}
+</style>
+<script src="js/jquery-3.3.1.js"></script>
+
+<script>
+	$(document).ready(function(){
+		var v_imag1=$("#imagen1").attr("src");
+		$("#imagen_grande").hide();
+
+		$("#imagen1").bind("click",v_imag1,abreImagen);
+		
+	});
+	function abreImagen(e){
+		//alert ("Datos "+e.data.v_imag1);
+		e.stopPropagation();
+			$("#imagen_grande").fadeIn(1000);
+			$("#img_sustitucion").replaceWith("<img src ='"+ e.data + "' width='700' height='405'>");
+		}
+	$(document).bind("click keypress",function(){
+		$("#imagen_grande").fadeOut(1000);
+	} )
+
+
+
+</script>
+</head>
+
+<body>
+
+<div id="imagen_grande"><img src="" id="img_sustitucion"></div>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie, enim id convallis dignissim, justo mauris porttitor nisl, eu consectetur lectus nisl vitae velit. Etiam dignissim finibus ante porttitor vulputate. Maecenas porta rutrum lorem quis blandit. Nulla pretium turpis ac volutpat pharetra. Curabitur rhoncus tortor et condimentum congue. Nulla pharetra turpis sed eros efficitur vulputate. Cras bibendum, neque sed blandit mattis, elit nibh imperdiet nunc, in aliquam orci arcu sed arcu. Vestibulum sed velit suscipit, euismod neque vel, ultricies lorem. Cras ac lacus luctus, lacinia libero sed, aliquet augue. Sed pharetra nisi arcu, eu semper lacus aliquam non. Phasellus dui ante, auctor eu ante sodales, convallis laoreet massa. Etiam ac porta mi. Vestibulum feugiat maximus orci a pharetra. Vivamus commodo rhoncus lectus, sit amet maximus augue laoreet at. Curabitur a erat ultrices, vulputate risus vehicula, viverra purus.</p>
+
+<p>Donec nec pretium tellus. Cras volutpat eros a mi suscipit suscipit. Etiam sit amet sodales tellus. Nulla a odio volutpat, auctor orci at, bibendum eros. Integer suscipit velit eget venenatis varius. Suspendisse condimentum libero ut turpis placerat, eu cursus nisl pretium. Aenean condimentum iaculis felis, eu tristique neque porttitor sit amet.</p>
+<table border="0">
+  <tr>
+    <td><img src="img/bela.jpg" width="150" height="100" id="imagen1"></td>
+    
+  </tr>
+</table>
+<p>Phasellus ligula sem, volutpat ac turpis in, mattis consectetur metus. Sed eu risus ac enim laoreet suscipit et et tortor. Quisque interdum nisi risus, a convallis elit gravida fermentum. Maecenas vehicula massa nec lectus aliquam, eu dapibus mi interdum. Aliquam magna felis, vulputate ut purus ac, feugiat condimentum velit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sodales lorem sollicitudin commodo blandit. Pellentesque sollicitudin, quam ac fringilla eleifend, erat risus fringilla nulla, at vehicula ipsum sapien in diam. Aenean vel odio sollicitudin, iaculis velit at, scelerisque diam. Praesent eget sem id tellus sollicitudin dignissim.</p>
+
+<p>Integer eu euismod tortor, vitae sagittis mauris. Vivamus interdum accumsan lorem, et euismod ante facilisis sed. Phasellus pretium odio quis hendrerit varius. Etiam non arcu vitae dui cursus luctus. Vivamus a interdum ligula, nec tincidunt dui. Pellentesque sit amet enim quam. Duis consectetur purus purus, at interdum libero volutpat sit amet. Praesent commodo lacinia lacinia. Nam at euismod nunc, eu molestie ipsum. In sagittis vel enim in ultricies. Mauris semper, tellus sit amet mollis laoreet, sem diam iaculis purus, eget sodales nulla felis sed augue. Pellentesque in quam lorem. Vivamus ac nunc posuere, congue risus condimentum, lobortis sapien. Donec eu convallis est, vel convallis nisi.</p>
+
+<p>Suspendisse venenatis congue ipsum, vitae porttitor sapien egestas et. Nam efficitur nibh in mauris dapibus sagittis. Proin magna nunc, facilisis vel tincidunt a, maximus ut nisl. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas cursus mattis augue, non maximus odio. Pellentesque a nunc quis mi sagittis vestibulum. Proin diam urna, porttitor vitae eros nec, convallis tristique mi. Cras ut dolor at dolor convallis porta. Aenean gravida euismod scelerisque. </p>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+
+	$(document).ready(function() {
+		var foto_nueva=new Image();//cramos una variable de timpo Imagen para usar la funcio preloader	
+		foto_nueva.src="img/d1.jpg";
+		   
+		$("#foto").hover(function(){
+			
+			//$(this).attr("src","img/d1.jpg");
+			$(this).attr("src",foto_nueva.src);//cambiamos por la variable
+		},
+		function(){
+			
+			$(this).attr("src","img/t/d1_t.jpg");
+			
+			
+		});	
+		
+    });
+
+</script>
+</head>
+
+<body>
+
+<img src="/img/d.jpg" width="300" height="200" id="foto">
+</body>
+</html>
