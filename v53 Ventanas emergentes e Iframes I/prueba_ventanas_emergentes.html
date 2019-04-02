@@ -3,11 +3,23 @@
 <head>
 <meta charset="utf-8">
 <title>Documento sin título</title>
-<script src="Jquery/jquery-1.6.3.min.js"></script>
+<script src="js/jquery-3.3.1.js"></script>
 <script>
+     //open("http://www.crosstronik.com.ec","ctk2",proVentana);	
+    //open("http://www.crosstronik.com.ec","ctk3",proVentana);
+    $(document).ready(function(){
+        var proVentana="width=300, height=200, left=300, top=300";
+        var miventana=open("http://www.crosstronik.com.ec","ctk1",proVentana);
+        $("#botonCerrar").click(function(e){
+            e.preventDefault();
+            miventana.close();
 
-	
-	
+
+        });
+        
+   
+
+    });		
 
 </script>
 </head>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<style type="text/css">
+body {
+	background-color: #06C;
+}
+h1{
+	text-align:center;
+	color:#FFF;
+	font-weight:bold;
+}
+
+#contenedor{
+	background-color:#06C;
+	width:500px;
+	height:400px;
+	margin:auto;
+	
+}
+</style>
+<script src="js/jquery-3.3.1.js"></script>
+
+<script>
+	$(document).ready(function(e){
+		$("#pulsar").click(function(e){
+			e.preventDefault();
+
+			$("#externo").attr("src","http://www.crosstronik.com.ec");
+		});
+
+	});
+
+
+</script>
+</head>
+
+<body>
+<h1> Píldoras informáticas</h1>
+<a href="" id="pulsar">Pulsa</a>
+<div id="contenedor">
+	<iframe src="" width="500" height="400" id="externo" frameborder="0">
+
+	</iframe>
+</div>
+
+</body>
+</html>
