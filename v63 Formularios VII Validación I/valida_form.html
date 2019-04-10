@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Formularios I</title>
+<style>
+
+body{
+	background-color:#FFC;
+}
+
+#principal{
+	
+	padding:10px 10px 10px 50px;
+	background-color:#F93;	
+	box-shadow: 10px 10px 5px 0px #999999;
+	border-radius: 10px;
+}
+
+td{
+	padding-bottom:25px;
+}
+h1{
+	text-align:center;
+}
+
+
+#tarjeta, #fecha_tarjeta, #email, #n_tarjeta, #f_tarjeta, #e_mail{
+	visibility:hidden;
+	
+}
+label.error {
+  color: #5ce70b;
+
+}
+input.error{
+  border: 2px dotted #000999;
+}
+
+
+</style>
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/jquery.validate.js"></script>
+
+
+
+<script>
+
+	$(document).ready(function() {
+    $("#form_datos").validate({
+
+      rules:{
+        nombre:"required",
+        apellido:"required",
+        f_nacimiento: {
+          date:true,
+          required:true
+        },
+        edad:{
+          number:true,
+          range:[1,105]
+        },
+        mail:"email",
+        p_web:"url"
+        
+      },
+      messages: {
+
+        nombre:"Nombre requerido",
+        apellido:"Apellido requerido",
+        f_nacimiento:{
+          required:"Campo obligatorio",
+          date:"Formato incorrecto"
+        },
+        mail:"Ingrese un correo valido",
+        p_web:"La URL es incorrecta ejm http://www.ejemplo.com",
+        edad:{
+          number: "Solo ingresa numeros",
+          range: "Ingrese una edad entre 1 y 105 anios"
+        }
+  
+        }
+      
+
+
+    });
+		
+		
+    
+
+	
+	
+	
+		
+		
+	});
+</script>
+</head>
+
+<body>
+<h1>Envío de datos</h1>
+<div id="contenedor">
+<form id="form_datos">
+  <table width="25%" border="0" align="center" id="principal">
+    <tr>
+      <td>Nombre:</td>
+      <td><label for="nombre"></label>
+        <input type="text" name="nombre" id="nombre" ></td>
+    </tr>
+    <tr>
+      <td>Apellidos:</td>
+      <td><input type="text" name="apellido" id="apellido" ></td>
+    </tr>
+    <tr>
+      <td>Fecha Nacimiento</td>
+      <td><label for="f_nacimiento"></label>
+        <input type="date" name="f_nacimiento" id="f_nacimiento"  ></td>
+    </tr>
+    <tr>
+      <td>Edad:</td>
+      <td><input name="edad" type="number" id="edad" size="4" ></td>
+    </tr>
+    <tr>
+      <td>Código Postal:</td>
+      <td><label for="c_postal"></label>
+        <input type="text" name="c_postal" id="c_postal"></td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td><label for="mail"></label>
+        <input type="email" name="mail" id="mail"></td>
+    </tr>
+    <tr>
+      <td>Página web:</td>
+      <td><label for="p_web"></label>
+        <input type="text" name="p_web" id="p_web" ></td>
+    </tr>
+    
+     
+     <tr>
+      <td><p>País:</p></td>
+      <td><p>
+        <label for="pais"></label>
+        <select name="pais" id="pais">
+          <option>España</option>
+          <option>México</option>
+          <option>Colombia</option>
+          <option>Peru</option>
+          <option>Chile</option>
+          <option>Argentina</option>
+          <option>Ecuador</option>
+        </select>
+     </td>
+    </tr>
+    <tr>
+    <td colspan="2" align="center"><input type="submit" value="Enviar" id="comprobar"></td>
+   
+    </tr>
+  </table>
+  </form>
+</div>
+
+<div id="las_aficiones"></div>
+</body>
+</html>

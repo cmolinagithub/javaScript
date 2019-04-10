@@ -26,7 +26,7 @@ h1{
 
 
 </style>
-<script src="js/jquery-1.6.3.min.js"></script>
+<script src="js/jquery-3.3.1.js"></script>
 
 
 <script>
@@ -44,9 +44,7 @@ h1{
         //alert ("Ingrese una eda correcat");
         this.value="";
         this.placeholder="Ingrese una edad correcta";
-        this.focus();
-
-        
+        this.focus();       
       }
       
     });
@@ -59,7 +57,36 @@ h1{
         return false;
       }
     });
-		
+    
+    $(":radio").click(function(){
+      alert(this.value);
+    });
+    
+    //practico para manejar checkbox
+    $(":checkbox").click(function(){
+   
+    $("#las_aficiones").text("");
+
+    $(":checkbox").each(function(){
+    
+    if($(this).prop("checked")){
+     
+     $("#las_aficiones").append($(this).val() + "<br/>");
+     
+      }
+    
+      });
+
+         
+    });
+
+    //$("#pais").click(function(){ // con la version 3 si funciona el click
+      $("#pais").change(function(){ //tambien funciona 
+        //alert($(this).val()); esta es la opcion del curso 
+        alert(this.value); //otra opcion
+      });
+
+
 	});
   function comprobar_datos(){
     //alert($("#nombre").val());
@@ -186,6 +213,9 @@ h1{
     </tr>
   </table>
   </form>
+</div>
+<div id="las_aficiones">
+
 </div>
 
 </body>
