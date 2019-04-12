@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Noticias varias</title>
+<link href="externa.css" rel="stylesheet">
+<style>
+#noticias li {
+	display: inline-block;
+	margin-right: 30px;
+}
+#noticias li a {
+	padding: 5px 10px; 
+	background-color: white;
+	color: black;
+	text-decoration: none;	
+}
+#noticias li a:hover {
+	background-color: rgb(255,153,0);
+	color: white;
+}
+#contenidos_externos #noticia {
+	margin-top: 10px;
+	padding: 20px;
+	border: 1px solid white;	
+}
+</style>
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+
+$(document).ready(function() {
+
+	$("#login").submit(function(){
+		
+		/*var datosFormulario={usuario:$("#usuario").val(),
+		                     contra:$("#contra").val()}	*/
+							 
+		var datosFormulario=$(this).serialize();
+							 
+		//$.get("login.php", datosFormulario, procesarDatos);
+		$.getJSON("login2.php", datosFormulario, procesarDatos);
+		
+		return false;
+		
+		
+	});
+	
+	function procesarDatos(datos_devueltos){
+
+		//$("#contenidos_externos").html("<p> El apellido es: "+datos_devueltos.Apellido+"</p> <br />");
+		//Para devolver todo el Json
+
+		var informacion="<p> Nombre: "+datos_devueltos.Nombre+"</p>";
+		informacion+="<p> Apellido: "+datos_devueltos.Apellido+"</p>";
+		informacion+="<p> Edad: "+datos_devueltos.Edad+"</p>";
+
+		$("#contenidos_externos").html(informacion);
+
+		
+		
+				
+	}
+	
+				
+}); 
+</script>
+</head>
+<body>
+
+	<div class="cabecera">
+		<p class="logo">Procesando respuesta del servidor</p>
+	</div>
+	<div class="contenido">
+		<div class="principal">
+			<form method="get" action="login.php" id="login">
+            <table>
+            	<tr>
+                	<td>					
+						<label for="usuario">Usuario:</label>
+                    </td>
+                    <td>
+						<input type="text" name="usuario" id="usuario">
+					</td>
+                    </tr>
+                    <tr>
+                    <td>&nbsp;</td>
+                     <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                    <td colspan="2" align="center">
+						<input type="submit" name="boton" id="boton" value="Enviar" >
+					</td>
+                    </tr>
+                    </table>
+				</form>
+			<div id="contenidos_externos"></div>
+		</div>
+	</div>
+
+</body>
+</html>

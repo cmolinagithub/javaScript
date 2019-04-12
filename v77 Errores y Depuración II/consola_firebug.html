@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Depurando</title>
+<link href="externa.css" rel="stylesheet">
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+
+$(document).ready(function() {
+	$("#comentarios").keyup(function(){
+		console.log("Se ha presionado  una letra<br />");
+		var texto=$(this).val();
+		console.log("este es tu texto"+texto);
+
+	});
+	
+	
+	
+	
+});
+
+</script>
+</head>
+<body>
+
+	<div class="cabecera">
+		<p class="logo">Probando consola firebug<i class="mm"></i></p>
+	</div>
+	<div class="contenido">
+		<div class="principal"> 
+			
+			 <form name="consola" method="post" action="">
+<p>
+    <label for="comentarios">Opiniones y comentarios</label>
+    <textarea name="coemntarios" id="comentarios" cols="40" rows="6"></textarea> <span id="contar"></span></p>
+    </form>
+		</div>
+	</div>
+	
+
+</body>
+</html>

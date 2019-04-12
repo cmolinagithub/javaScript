@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Firebug</title>
+
+<link href="externa.css" rel="stylesheet">
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+$(document).ready(function() {
+var record = 0;
+var pregunta = [
+  ['¿Cuántas lunas tiene la Tierra?',1,[0,1,2,3]],
+  ['¿Cuántas lunas tiene Saturno?',31,[0,14,31,160]],
+  ['¿Cuántas lunas tiene Marte?',2,[0,2,11,15]]]
+;
+
+var preguntasTotales=pregunta.length;
+
+
+function hazPregunta() {
+
+ var preguntaActual=pregunta.pop();
+
+ $('#pregunta').text(preguntaActual[0]);
+ 
+ var respuestas=construyeRespuestas(preguntaActual[2]);
+
+ $('#respuestas').html(respuestas);
+
+ $('#respuestas input').click(function() {
+    if ($(this).val()==preguntaActual[1]) {
+      record++;
+      $('#resultado').prepend('Correcto!');
+    } else {
+      $('#resultado').prepend('Error. La respuesta es '+preguntaActual[1]);
+    }
+  
+    $('#siguiente').show();
+  });
+}
+
+function construyeRespuestas(respuestas) {
+  var respuestaHTML='';
+  
+  for (i=0;i<respuestas.length;i++) {
+    
+    respuestaHTML+=' <input name="pregunta" type="radio" value="';
+    respuestaHTML+=respuestas[i] + '">' + respuestas[i];
+  }
+  
+  return respuestaHTML;
+}
+
+function dameResultados() {
+  var resultados='<p>Tienes ' + record + ' de' + preguntasTotales + ' preguntas correctas.</p>';
+  $('#AreaPreguntas').html(resultados); 
+}
+
+$('#siguiente').click(function() {
+  $(this).hide();
+  $('#resultado').text('');
+  if (pregunta.length==preguntasTotales) {
+    $(this).val('siguiente pregunta >>');
+  } else if (pregunta.length==1) {
+    $(this).val('Muestra resultados');
+  }
+  if (pregunta.length>0) {
+    hazPregunta();
+  } else {
+    dameResultados();
+  }
+});
+
+
+}); 
+</script>
+</head>
+<body>
+
+	<div class="cabecera">
+		<p class="logo">Usando Firebug<i class="mm"></i></p>
+	</div>
+	<div class="contenido">
+		<div class="principal">
+			<h1>Usando el debugger de Firebug</h1>
+			<div id="AreaPreguntas">
+  <p id="pregunta"></p>
+  <p id="respuestas"></p>
+  <p id="resultado"></p>
+  <input type="button" value="Comienza las preguntas" id="siguiente">
+  </div>
+		</div>
+	</div>
+	
+
+</body>
+</html>

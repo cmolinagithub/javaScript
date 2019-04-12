@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Google Maps</title>
+<link href="externa.css" rel="stylesheet">
+<style>
+
+#mapa h2 {
+	color: black;
+}
+#mapa p {
+	color: black;	
+}
+
+#mapa {
+	
+	height:400px;
+	width:760px;
+
+}
+</style>
+<script src="http://maps.google.com/maps/api/js?key=#API_KEY#"></script> 
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/jquery.gomap-1.3.3.min.js"></script>
+<script>
+
+	$(document).ready(function() {
+		$("#mapa").goMap(
+			{
+				latitude:-0.2901858,
+				longitude:-78.4732348,
+				zoom:16,
+				moptype:"SATELLITE",
+				scaleControl:true
+			}
+		);
+		$.goMap.createMarker({
+			latitude:-0.2901858,
+			longitude:-78.4732348,
+			title:"Crosstronik Cia.Ltda",
+			html:{
+				content:"Electronica y Sistemas",
+				popup:true
+
+			}
+
+		});
+		
+		
+
+		
+	}); //fin ready
+
+</script>
+
+</head>
+<body>
+
+	<div class="cabecera">
+		<p class="logo">Mapas</p>
+	</div>
+	<div class="contenido">
+		<div class="principal">
+			<h1>Google Maps</h1>
+            
+            <div id="mapa"></div>
+
+		</div>
+	</div>
+	
+
+</body>
+</html>
